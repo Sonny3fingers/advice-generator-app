@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Roboto:wght@300&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 350px;
+  font-family: "Manrope", sans-serif;
+  background: $darkBlue;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 100px 20px;
+  line-height: 1.3;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 40px 25px;
+  background: $darkGrayishBlue;
+  border-radius: 10px;
+}
+
+.container.active {
+  animation: animatedAdvice 0.4s ease-in-out;
+}
+
+.container h1 {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: $neonGreen;
+  margin-bottom: 30px;
+}
+
+.container p {
+  font-size: $font-quote;
+  color: $lightCyan;
+  margin-bottom: 25px;
+}
+
+.container .divider {
+  background-image: url("/images/pattern-divider-mobile.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+  min-height: 16px;
+}
+
+.container .dice {
+  position: absolute;
+  bottom: -32.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $neonGreen;
+  width: 65px;
+  height: 65px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.container .dice:hover {
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 20px rgba(82, 255, 168, 0.9);
+}
+
+@media (min-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+    height: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 40%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 540px;
+    height: 330px;
+    padding: 50px;
+  }
+  .container .divider {
+    background-image: url("/images/pattern-divider-desktop.svg");
+  }
+}
+
+@keyframes animatedAdvice {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
